@@ -6,3 +6,5 @@ export type TActionType =
     | "STATUS change countdown-active"
     | "STATUS change too-soon"
     | "STOPWATCH change millisecond"
+    | "ATTEMPTS increment"
+    | "GIFT reveal"

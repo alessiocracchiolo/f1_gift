@@ -49,7 +49,18 @@ export const ReducerApp = ( initialState: IApp, action: IAction ): IApp => {
                 ...initialState,
                 stopwatch: action.payload - initialState.stopwatch
             };
-    
+        case "ATTEMPTS increment":
+            return {
+                ...initialState,
+                attempts: initialState.attempts + 1
+            };
+
+        case "GIFT reveal":
+            return {
+                ...initialState,
+                isGiftRevealed: true,
+                winMethod: action.payload // "skill" or "pity"
+            };    
         default: return initialState
     }
 }

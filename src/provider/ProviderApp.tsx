@@ -6,7 +6,9 @@ import { IApp } from '../interface/IApp';
 const initialState: IApp = {
     currentStatus: "init-timer",
     currentSecond: 0,
-    stopwatch: 0
+    stopwatch: 0,
+    attempts: 0,
+    isGiftRevealed: false
 }
 
 interface value {
