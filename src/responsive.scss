@@ -1,0 +1,25 @@
+@media (min-width: 0px) and (max-width: 740px) {
+    .App {
+        margin: 20px 0 0;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 670px) {
+    #section-traffic-light {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 520px) {
+    #section-title {
+        font-size: 3vw;
+    }
+    
+    #section-traffic-light {
+        font-size: 2.2vw;
+    }
+
+    #section-text {
+        font-size: 2.4vw;
+    }
+}
