@@ -9,6 +9,7 @@
     "build": "tsc && vite build --base=./",
     "preview": "vite preview",
     "deploy": "npm run build && npx gh-pages -d dist",
+    "deploy:firebase": "npm run build && firebase deploy",
     "update-patch": "npm version --force --no-git-tag-version patch",
     "update-minor": "npm version --force --no-git-tag-version minor",
     "update-major": "npm version --force --no-git-tag-version major"
