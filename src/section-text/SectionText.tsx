@@ -10,17 +10,17 @@ export const SectionText = () => {
     return (
         <section id="section-text">
             <h2>{
-                currentStatus === "init-timer"  ?  "Click to start"
+                currentStatus === "init-timer"  ?  "Click per iniziare"
                 : currentStatus === "available-click" ? "-"
                 : currentStatus === "available-reset" ? stopwatch+"ms"
-                : currentStatus === "countdown-active" ? "Await"
-                : currentStatus === "too-soon" ? "Too soon" : "Error client"
+                : currentStatus === "countdown-active" ? "Attendi"
+                : currentStatus === "too-soon" ? "Troppo presto" : "Errore client"
             }</h2>
 
             {
                 currentStatus === "available-reset" || currentStatus === "too-soon" 
                 ? <h3>
-                    <i className="fa-solid fa-arrow-rotate-left"/> Tap to reset
+                    <i className="fa-solid fa-arrow-rotate-left"/> Click per riprovare
                 </h3>
                 : null
             }
