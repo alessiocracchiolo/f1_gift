@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { contextApp } from '../provider/ProviderApp';
 import "./GiftReveal.scss";
 
@@ -6,8 +6,17 @@ export const GiftReveal = () => {
     const { state } = useContext(contextApp);
     const { winMethod } = state;
     const [isOpen, setIsOpen] = useState(false);
+    const [canOpen, setCanOpen] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCanOpen(true);
+        }, 1500);
+        return () => clearTimeout(timer);
+    }, []);
 
     const openGift = () => {
+        if (!canOpen) return;
         setIsOpen(true);
     };
 
@@ -28,7 +37,7 @@ export const GiftReveal = () => {
             </div>
 
             {!isOpen ? (
-                <div className="envelope-container" onClick={openGift}>
+                <div className={`envelope-container ${!canOpen ? 'disabled' : ''}`} onClick={openGift}>
                     <div className="envelope">
                         <div className="envelope-flap"></div>
                         <div className="envelope-pocket"></div>

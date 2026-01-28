@@ -55,6 +55,13 @@
         animation: pulse 2s infinite;
         margin-top: 2rem;
 
+        &.disabled {
+            cursor: default;
+            animation: none;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
         .envelope {
             width: 200px;
             height: 140px;
