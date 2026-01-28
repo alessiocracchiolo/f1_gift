@@ -1,7 +1,8 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 import { contextApp } from "./provider/ProviderApp";
 
+import { IntroScreen } from './intro-screen/IntroScreen';
 import { SectionTitle } from "./section-title/SectionTitle";
 import { SectionTrafficLight } from "./section-traffic-light/SectionTrafficLight";
 import { SectionText } from "./section-text/SectionText";
@@ -12,6 +13,13 @@ import "./responsive.scss"
 export const App = () => {
     const { countdown, state, dispatch } = useContext(contextApp)
     const { currentSecond, currentStatus, stopwatch } = state;
+
+    const [isStart, setIsStart] = useState(false);
+
+    const startExperience = () => {
+        setIsStart(true);
+    }   
+
 
     const onInitTimer = () => {
         switch ( currentStatus ) {
@@ -46,6 +54,11 @@ export const App = () => {
     }
 
     return (
+
+        !isStart ? <IntroScreen onStart={startExperience}/> 
+
+        :
+        
         <div className="App">
             <SectionTitle/>
             <SectionTrafficLight/>
